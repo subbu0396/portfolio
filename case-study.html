@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study — Airtel Push Conversion Uplift · C.V.S.S. Subramanyam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --surface-2: #F4F3EF;
+      --border: #E4E3DD;
+      --border-strong: #CCCCC0;
+      --text: #1A1A17;
+      --text-secondary: #5C5C54;
+      --text-muted: #9C9C90;
+      --accent: #2E6FD4;
+      --accent-bg: #EBF2FC;
+      --accent-text: #1A4D9E;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --radius: 8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141412; --surface: #1E1E1B; --surface-2: #252522;
+        --border: #2E2E2A; --border-strong: #3E3E38;
+        --text: #F0EFE8; --text-secondary: #A0A094; --text-muted: #666660;
+        --accent: #5B96F0; --accent-bg: #1A2B45; --accent-text: #7EAEF5;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.75; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 1rem 0;
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--serif); font-size: 17px; color: var(--text); text-decoration: none; }
+    .back-link { font-size: 13px; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .back-link:hover { color: var(--text); }
+
+    /* Header */
+    .case-header { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .case-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-text); background: var(--accent-bg); padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem; }
+    .case-header h1 { font-family: var(--serif); font-size: clamp(28px, 5vw, 42px); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    .case-summary { font-size: 16px; color: var(--text-secondary); line-height: 1.75; max-width: 580px; margin-bottom: 2rem; }
+
+    /* Meta grid */
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 0; }
+    .meta-cell { background: var(--surface); padding: 1rem 1.25rem; }
+    .meta-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 4px; }
+    .meta-value { font-size: 14px; font-weight: 500; color: var(--text); }
+
+    /* Outcome banner */
+    .outcome-banner { background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2.5rem 0; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .outcome-stat { }
+    .outcome-num { font-family: var(--serif); font-size: 36px; color: var(--accent-text); line-height: 1; }
+    .outcome-label { font-size: 12px; color: var(--accent-text); opacity: 0.75; margin-top: 4px; }
+    .outcome-divider { width: 1px; height: 48px; background: color-mix(in srgb, var(--accent) 25%, transparent); }
+    .outcome-desc { font-size: 14px; color: var(--accent-text); line-height: 1.6; max-width: 360px; }
+
+    /* Body content */
+    .case-body { }
+    .section-block { margin-bottom: 3rem; }
+    .block-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+    .block-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 1rem; }
+    p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); font-weight: 500; }
+
+    /* Callout */
+    .callout { border-left: 3px solid var(--accent); background: var(--accent-bg); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .callout p { color: var(--accent-text); font-size: 14px; margin: 0; }
+
+    /* Steps */
+    .steps { list-style: none; padding: 0; counter-reset: steps; }
+    .steps li { counter-increment: steps; display: flex; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .steps li:last-child { border-bottom: none; }
+    .step-num { font-family: var(--serif); font-size: 20px; color: var(--text-muted); min-width: 28px; line-height: 1.4; }
+    .step-content h3 { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .step-content p { font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+
+    /* Results grid */
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 1.5rem 0; }
+    .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+    .result-num { font-family: var(--serif); font-size: 28px; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .result-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Learnings */
+    .learning-list { list-style: none; padding: 0; }
+    .learning-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-secondary); line-height: 1.65; display: flex; gap: 0.75rem; }
+    .learning-list li:last-child { border-bottom: none; }
+    .learning-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* More cases nav */
+    .more-section { border-top: 1px solid var(--border); padding: 3rem 0; margin-top: 3rem; }
+    .more-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .case-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .case-cards { grid-template-columns: 1fr; } }
+    .case-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; cursor: pointer; transition: border-color 0.15s; }
+    .case-card:hover { border-color: var(--border-strong); }
+    .case-card-tag { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+    .case-card-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .case-card-metric { font-size: 13px; color: var(--accent-text); }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; font-size: 12px; color: var(--text-muted); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="portfolio.html" class="nav-logo">C.V.S.S. Subramanyam</a>
+    <a href="portfolio.html" class="back-link">← Back to portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <header class="case-header">
+      <span class="case-tag">Case Study · Solutions Engineering</span>
+      <h1>Driving a 46.3% push notification conversion uplift for Airtel</h1>
+      <p class="case-summary">
+        Airtel, India's largest telecom with 300M+ subscribers, was running blanket push campaigns with declining conversion rates. I led the end-to-end engagement redesign — from diagnosis to delivery — resulting in their highest-performing quarter on MoEngage.
+      </p>
+      <div class="meta-grid">
+        <div class="meta-cell"><div class="meta-label">Company</div><div class="meta-value">Airtel India</div></div>
+        <div class="meta-cell"><div class="meta-label">Industry</div><div class="meta-value">Telecom / Consumer</div></div>
+        <div class="meta-cell"><div class="meta-label">My role</div><div class="meta-value">Solutions Engineer</div></div>
+        <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">MoEngage</div></div>
+        <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-value">~8 weeks</div></div>
+      </div>
+    </header>
+
+    <!-- Outcome banner -->
+    <div class="outcome-banner">
+      <div class="outcome-stat">
+        <div class="outcome-num">46.3%</div>
+        <div class="outcome-label">Push conversion uplift</div>
+      </div>
+      <div class="outcome-divider"></div>
+      <div class="outcome-stat">
+        <div class="outcome-num">3.1×</div>
+        <div class="outcome-label">Click-through rate improvement</div>
+      </div>
+      <div class="outcome-divider"></div>
+      <p class="outcome-desc">Airtel's highest-performing push engagement quarter, achieved without increasing send volume — purely through segmentation and personalisation.</p>
+    </div>
+
+    <div class="case-body">
+
+      <!-- Problem -->
+      <div class="section-block">
+        <div class="block-label">01 &nbsp; The problem</div>
+        <h2>Reach was high. Relevance was not.</h2>
+        <p>Airtel's marketing team was sending the same promotional push notifications to their entire subscriber base — hundreds of millions of users. While delivery rates were strong, conversion (the rate at which users acted on the notification) had been declining quarter-over-quarter.</p>
+        <p>The core issue: <strong>blanket campaigns treat every user identically</strong>, regardless of their plan tier, data usage behaviour, recharge history, or geography. A prepaid user in Rajasthan and a postpaid business user in Mumbai were getting the same message at the same time.</p>
+        <div class="callout">
+          <p><strong>The key question we needed to answer:</strong> Can we improve conversion without increasing send frequency, simply by sending more relevant messages to better-defined audiences?</p>
+        </div>
+      </div>
+
+      <!-- Discovery -->
+      <div class="section-block">
+        <div class="block-label">02 &nbsp; Discovery</div>
+        <h2>Understanding the data before touching the campaigns</h2>
+        <p>Before proposing any changes, I spent the first two weeks in deep discovery — working with Airtel's CRM team to analyse existing campaign performance data and user behaviour signals available on MoEngage.</p>
+        <p>Key findings from the audit:</p>
+        <ul class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h3>Timing misalignment</h3>
+              <p>Most pushes were sent between 10am–12pm. Engagement data showed the highest open rates for prepaid users between 7–8pm (post-work recharge window) — nearly unused by the existing schedule.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h3>Irrelevant offer targeting</h3>
+              <p>High-ARPU postpaid users were receiving prepaid recharge offers. Lapsed users were getting upsell notifications. Audience–offer mismatch was the single largest driver of low conversion.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h3>No lifecycle differentiation</h3>
+              <p>New users (0–30 days), active users, and churning users all received identical campaign flows. There was no onboarding journey, no retention trigger, and no win-back logic.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <h3>Copy was generic</h3>
+              <p>Push copy was not personalised beyond the user's first name. No dynamic content, no location-aware offers, no behavioural triggers.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Approach -->
+      <div class="section-block">
+        <div class="block-label">03 &nbsp; Approach</div>
+        <h2>A segmentation-first redesign of the campaign architecture</h2>
+        <p>Working with Airtel's marketing and CRM teams, I proposed restructuring their entire push campaign architecture around three principles: <strong>right audience, right message, right time</strong>.</p>
+        <ul class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h3>Audience segmentation by behaviour, not just plan type</h3>
+              <p>We created six core segments using MoEngage's segmentation engine: active prepaid, lapsing prepaid, active postpaid, new users (≤30 days), high-ARPU users, and dormant users. Each received a distinct campaign track with tailored offers.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h3>Send-time optimisation</h3>
+              <p>Enabled MoEngage's intelligent send-time optimisation (STO) for prepaid segments, shifting delivery to each user's personal engagement window rather than a fixed broadcast time.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h3>Dynamic personalisation in copy</h3>
+              <p>Introduced Liquid-style personalisation tokens for plan expiry dates, last recharge amount, and recommended plan tier — making each notification feel individually relevant.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <h3>Lifecycle journeys for new and lapsing users</h3>
+              <p>Built two new automated flows: a 4-step new user onboarding journey (days 1, 3, 7, 14) and a 3-step lapsed user win-back sequence with escalating offers.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">5</span>
+            <div class="step-content">
+              <h3>A/B testing framework</h3>
+              <p>Set up systematic A/B tests across copy variants, CTA placement, and offer type — establishing a feedback loop so Airtel's team could continue optimising independently after handover.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Results -->
+      <div class="section-block">
+        <div class="block-label">04 &nbsp; Results</div>
+        <h2>Conversion improved across every segment</h2>
+        <p>After an 8-week rollout and stabilisation period, the results across Airtel's push campaigns were measurable and significant — all without increasing send volume or budget.</p>
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-num">46.3%</div>
+            <div class="result-desc">Overall push conversion uplift vs. pre-redesign baseline</div>
+          </div>
+          <div class="result-card">
+            <div class="result-num">3.1×</div>
+            <div class="result-desc">Improvement in click-through rate for lapsing user segment</div>
+          </div>
+          <div class="result-card">
+            <div class="result-num">38%</div>
+            <div class="result-desc">Reduction in unsubscribe rate after removing irrelevant blanket sends</div>
+          </div>
+          <div class="result-card">
+            <div class="result-num">~2×</div>
+            <div class="result-desc">Conversion rate for new user onboarding journey vs. previous approach</div>
+          </div>
+        </div>
+        <div class="callout">
+          <p>Airtel's team flagged this as their strongest push engagement quarter on the platform. The campaign architecture was adopted as their internal standard and replicated across two additional product lines.</p>
+        </div>
+      </div>
+
+      <!-- Learnings -->
+      <div class="section-block">
+        <div class="block-label">05 &nbsp; Learnings</div>
+        <h2>What I'd take into a PM role</h2>
+        <ul class="learning-list">
+          <li><strong>Data before solutions.</strong> The instinct to jump to "fix the copy" was wrong. The audit revealed the root cause was audience–offer mismatch — copy was a symptom, not the problem. Discovery first, always.</li>
+          <li><strong>Segmentation is a product decision.</strong> Defining the right audience segments required understanding the business model (ARPU, churn triggers, lifecycle value) — not just the tool. This is PM work wrapped in SE packaging.</li>
+          <li><strong>Scalable systems beat one-time wins.</strong> The A/B testing framework and documented playbooks meant Airtel's team could continue improving independently. A handover that creates dependency isn't a handover.</li>
+          <li><strong>Reduction is a result too.</strong> The 38% drop in unsubscribes was as important as the conversion lift — it signalled we were building a sustainable relationship with users, not burning through the audience.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- More cases -->
+    <div class="more-section">
+      <div class="more-title">More case studies</div>
+      <div class="case-cards">
+        <div class="case-card">
+          <div class="case-card-tag">Customer Engagement · OYO Hotels</div>
+          <div class="case-card-title">Cross-channel orchestration driving 8× engagement growth</div>
+          <div class="case-card-metric">8× engagement uplift</div>
+        </div>
+        <div class="case-card">
+          <div class="case-card-tag">Integrations · Singular</div>
+          <div class="case-card-title">Reducing enterprise onboarding timelines by 30%</div>
+          <div class="case-card-metric">30% faster time-to-value</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    &copy; 2026 C.V.S.S. Subramanyam &nbsp;·&nbsp; <a href="portfolio.html" style="color: var(--text-muted); text-decoration: none;">Back to portfolio</a>
+  </div>
+</footer>
+
+</body>
+</html>
