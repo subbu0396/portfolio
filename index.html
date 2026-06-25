@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subramanyam — Integrations Manager & Aspiring PM</title>
+  <title>S. Subramanyam — Integrations Manager & Aspiring PM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
@@ -130,7 +130,9 @@
 
     /* Impact */
     .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .impact-cell { background: var(--surface); padding: 1.5rem 1.25rem; }
+    .impact-cell { background: var(--surface); padding: 1.5rem 1.25rem; transition: background 0.15s; }
+    .impact-cell:hover { background: var(--surface-2); }
+    a.impact-link { text-decoration: none; display: contents; }
     .impact-num { font-family: var(--serif); font-size: 30px; color: var(--text); line-height: 1; margin-bottom: 8px; }
     .impact-client { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-text); background: var(--accent-bg); padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 6px; }
     .impact-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
@@ -173,10 +175,10 @@
 
 <nav>
   <div class="container">
-    <a href="#" class="nav-logo">C.V.S.S. Subramanyam</a>
+    <a href="#" class="nav-logo">S. Subramanyam</a>
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
-      <li><a href="D:\WORK\PRODUCT MANAGEMENT\files\case-study.html">Impact</a></li>
+      <li><a href="#impact">Impact</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -194,7 +196,7 @@
         7+ years bridging technical complexity and business outcomes across mobile attribution, customer engagement, and MarTech platforms. I've worked with Airtel, OYO Hotels, and Flipkart — and managed 20+ enterprise clients globally at Singular.
       </p>
       <div class="hero-actions">
-        <a href="mailto:subramanyamc09@email.com" class="btn btn-primary">Get in touch</a>
+        <a href="/Subramanyam_PM_Resume.pdf" class="btn btn-primary">Download resume</a>
         <a href="#experience" class="btn btn-secondary">See my work</a>
       </div>
       <div class="availability">
@@ -268,11 +270,13 @@
       <p class="section-eyebrow">Results</p>
       <h2 class="section-title">Measurable outcomes</h2>
       <div class="impact-grid">
-        <div class="impact-cell">
-          <div class="impact-client">Airtel</div>
-          <div class="impact-num">46.3%</div>
-          <div class="impact-desc">Push conversion uplift via segmentation redesign and journey optimisation</div>
-        </div>
+        <a href="/case-study.html" style="text-decoration:none; display:contents;">
+          <div class="impact-cell" style="cursor:pointer;">
+            <div class="impact-client">Airtel ↗</div>
+            <div class="impact-num">46.3%</div>
+            <div class="impact-desc">Push conversion uplift via segmentation redesign and journey optimisation</div>
+          </div>
+        </a>
         <div class="impact-cell">
           <div class="impact-client">OYO Hotels</div>
           <div class="impact-num">8×</div>
@@ -369,8 +373,8 @@
           I'm actively looking for roles in Product Management, Solutions Engineering, Technical Account Management, and Partner Engineering. I'm based in Bengaluru and open to relocation.
         </p>
         <div class="contact-links">
-          <a href="mailto:subramanyamc09@email.com" class="btn btn-primary">Email me</a>
-          <a href="https://www.linkedin.com/in/cvss-subramanyam-8471a9114/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <a href="mailto:your@email.com" class="btn btn-primary">Email me</a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
           <a href="/Subramanyam_PM_Resume.pdf" class="btn btn-secondary">Download resume</a>
         </div>
         <div class="locations">
