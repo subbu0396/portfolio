@@ -152,6 +152,18 @@
     .learning-pill { font-size: 12px; color: var(--accent-text); background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 20px; padding: 3px 10px; }
 
     /* Contact */
+    /* Projects */
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; margin-bottom: 1rem; transition: border-color 0.15s; }
+    .project-card:hover { border-color: var(--border-strong); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .project-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .project-status { font-size: 11px; color: var(--accent-text); background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+    .project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+    .project-tag { font-size: 11px; color: var(--text-muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; }
+    .project-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .project-link:hover { text-decoration: underline; }
+
     .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
     .contact-card h3 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-bottom: 0.6rem; }
     .contact-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.75rem; max-width: 480px; line-height: 1.65; }
@@ -181,6 +193,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -259,7 +272,7 @@
         <ul class="exp-bullets">
           <li>Delivered a <strong><a href="/case-study.html" style="color: var(--accent); text-decoration: none;">46.3% push conversion uplift ↗</a></strong> for Airtel — India's largest telecom — through targeted segmentation redesign and journey optimisation.</li>
           <li>Achieved <strong>8× engagement growth</strong> for OYO Hotels via personalised cross-channel campaign orchestration across push, in-app, and email.</li>
-          <li>Drove a <strong>2× engagement uplift</strong> for Flipkart through A/B-tested in-app messaging strategy.</li>
+          <li>Drove a <strong>2× engagement uplift</strong> for Flipkart through A/B-tested push notification and in-app messaging strategy.</li>
           <li>Scoped and delivered pre-sales demos, POCs, and integration proposals for enterprise prospects across South Asia.</li>
           <li>Collaborated with product teams to surface recurring client pain points and translate them into actionable feature feedback.</li>
         </ul>
@@ -376,6 +389,34 @@
           <span class="learning-pill">Lenny's Newsletter</span>
           <span class="learning-pill">AI & LLMs</span>
         </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <p class="section-eyebrow">Projects</p>
+      <h2 class="section-title">Things I've built</h2>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-title">MMP Onboarding Assistant</div>
+          </div>
+          <span class="project-status">Prototype</span>
+        </div>
+        <p class="project-desc">
+          An AI-powered onboarding agent for Mobile Measurement Platforms (MMPs). Select the MMP you're onboarding into and specify the types and methods of data you need — the assistant generates a tailored integration checklist on the fly. Fully platform-agnostic, designed to work across Singular, AppsFlyer, Adjust, and other MMPs. Checklists can be exported in <strong>.md</strong>, <strong>.pdf</strong>, or <strong>.docx</strong> format, making it easy to share with engineering and marketing teams during onboarding.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">AI Agent</span>
+          <span class="project-tag">Mobile Attribution</span>
+          <span class="project-tag">Platform Agnostic</span>
+          <span class="project-tag">Cursor</span>
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">Checklist Generator</span>
+          <span class="project-tag">.md / .pdf / .docx export</span>
+        </div>
+        <a href="https://singular-onboarding-assistant.vercel.app/" target="_blank" rel="noopener" class="project-link">View live project ↗</a>
       </div>
     </section>
 
