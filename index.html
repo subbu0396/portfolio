@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subramanyam — Integrations Manager & Aspiring PM</title>
+  <title>C.V.S.S. Subramanyam — Integrations Manager & Aspiring PM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
@@ -91,10 +91,10 @@
     .btn-secondary { background: transparent; color: var(--text); border-color: var(--border-strong); }
     .btn-secondary:hover { background: var(--surface-2); }
     .availability {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; color: var(--text-muted);
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--text);
     }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: #3CB97A; display: inline-block;
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #3CB97A; display: inline-block; flex-shrink: 0;
       box-shadow: 0 0 0 3px color-mix(in srgb, #3CB97A 20%, transparent);
       animation: pulse 2s ease-in-out infinite; }
     @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, #3CB97A 20%, transparent); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, #3CB97A 5%, transparent); } }
@@ -122,15 +122,17 @@
     .exp-left { }
     .exp-role { font-size: 15px; font-weight: 500; color: var(--text); }
     .exp-company { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
-    .exp-period { font-size: 12px; color: var(--text-muted); white-space: nowrap; margin-top: 4px; }
+    .exp-period { font-size: 12px; color: var(--text); white-space: nowrap; margin-top: 4px; }
     .exp-bullets { list-style: none; padding: 0; }
     .exp-bullets li { font-size: 14px; color: var(--text-secondary); line-height: 1.65; padding: 4px 0 4px 1rem; position: relative; }
-    .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--border-strong); font-size: 12px; top: 5px; }
+    .exp-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--text-secondary); font-size: 18px; top: 1px; }
     strong { color: var(--text); font-weight: 500; }
 
     /* Impact */
     .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .impact-cell { background: var(--surface); padding: 1.5rem 1.25rem; }
+    .impact-cell { background: var(--surface); padding: 1.5rem 1.25rem; transition: background 0.15s; }
+    .impact-cell:hover { background: var(--surface-2); }
+    a.impact-link { text-decoration: none; display: contents; }
     .impact-num { font-family: var(--serif); font-size: 30px; color: var(--text); line-height: 1; margin-bottom: 8px; }
     .impact-client { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent-text); background: var(--accent-bg); padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 6px; }
     .impact-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
@@ -141,6 +143,7 @@
     .skill-group-title { font-size: 12px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
     .pill-group { display: flex; flex-wrap: wrap; gap: 6px; }
     .pill { font-size: 12px; color: var(--text-secondary); background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; }
+    .pill-highlight { font-size: 12px; color: var(--accent-text); background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 20px; padding: 4px 12px; font-weight: 500; }
 
     /* Currently learning */
     .learning-strip { background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
@@ -149,6 +152,18 @@
     .learning-pill { font-size: 12px; color: var(--accent-text); background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 20px; padding: 3px 10px; }
 
     /* Contact */
+    /* Projects */
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; margin-bottom: 1rem; transition: border-color 0.15s; }
+    .project-card:hover { border-color: var(--border-strong); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .project-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .project-status { font-size: 11px; color: var(--accent-text); background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+    .project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+    .project-tag { font-size: 11px; color: var(--text-muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; }
+    .project-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .project-link:hover { text-decoration: underline; }
+
     .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
     .contact-card h3 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-bottom: 0.6rem; }
     .contact-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.75rem; max-width: 480px; line-height: 1.65; }
@@ -176,8 +191,9 @@
     <a href="#" class="nav-logo">C.V.S.S. Subramanyam</a>
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
-      <li><a href="D:\WORK\PRODUCT MANAGEMENT\files\case-study.html">Impact</a></li>
+      <li><a href="#impact">Impact</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -194,12 +210,12 @@
         7+ years bridging technical complexity and business outcomes across mobile attribution, customer engagement, and MarTech platforms. I've worked with Airtel, OYO Hotels, and Flipkart — and managed 20+ enterprise clients globally at Singular.
       </p>
       <div class="hero-actions">
-        <a href="mailto:subramanyamc09@email.com" class="btn btn-primary">Get in touch</a>
+        <a href="/Subramanyam_PM_Resume.pdf" class="btn btn-primary">Download resume</a>
         <a href="#experience" class="btn btn-secondary">See my work</a>
       </div>
       <div class="availability">
         <span class="dot"></span>
-        Open to PM, Solutions Engineering, and TAM roles
+        Open to Product Manager, Associate Product Manager, Solutions Engineer, and Technical Account Manager roles
       </div>
     </div>
 
@@ -232,9 +248,9 @@
         <div class="exp-meta">
           <div class="exp-left">
             <div class="exp-role">Integrations Manager</div>
-            <div class="exp-company">Singular &mdash; Mobile Attribution & Analytics Platform</div>
+            <div class="exp-company">Singular · Mobile Attribution & Analytics Platform</div>
           </div>
-          <div class="exp-period">Current</div>
+          <div class="exp-period">Jul 2022 – Present</div>
         </div>
         <ul class="exp-bullets">
           <li>Managed <strong>20+ concurrent enterprise clients</strong> across APAC, EMEA, and North America through the full integration lifecycle — from scoping to go-live.</li>
@@ -248,17 +264,33 @@
       <div class="exp-item">
         <div class="exp-meta">
           <div class="exp-left">
-            <div class="exp-role">Solutions Engineer</div>
-            <div class="exp-company">MoEngage &mdash; Customer Engagement Platform</div>
+            <div class="exp-role">Senior Solutions Engineer</div>
+            <div class="exp-company">MoEngage · Customer Engagement Platform</div>
           </div>
-          <div class="exp-period">Prior</div>
+          <div class="exp-period">Sep 2020 – May 2022</div>
         </div>
         <ul class="exp-bullets">
-          <li>Delivered a <strong>46.3% push conversion uplift</strong> for Airtel — India's largest telecom — through targeted segmentation redesign and journey optimisation.</li>
+          <li>Delivered a <strong><a href="/case-study.html" style="color: var(--accent); text-decoration: none;">46.3% push conversion uplift ↗</a></strong> for Airtel — India's largest telecom — through targeted segmentation redesign and journey optimisation.</li>
           <li>Achieved <strong>8× engagement growth</strong> for OYO Hotels via personalised cross-channel campaign orchestration across push, in-app, and email.</li>
           <li>Drove a <strong>2× engagement uplift</strong> for Flipkart through A/B-tested push notification and in-app messaging strategy.</li>
           <li>Scoped and delivered pre-sales demos, POCs, and integration proposals for enterprise prospects across South Asia.</li>
           <li>Collaborated with product teams to surface recurring client pain points and translate them into actionable feature feedback.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-left">
+            <div class="exp-role">Solutions Engineer</div>
+            <div class="exp-company">MoEngage · Customer Engagement Platform</div>
+          </div>
+          <div class="exp-period">Dec 2018 – Aug 2020</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Onboarded and managed enterprise clients across South Asia, handling end-to-end integration of MoEngage SDKs and APIs.</li>
+          <li>Conducted technical training sessions and created integration documentation for client teams.</li>
+          <li>Collaborated with the product team to relay client feedback and contribute to roadmap prioritisation.</li>
+          <li>Supported pre-sales efforts with technical demos and proof-of-concept builds for prospective enterprise accounts.</li>
         </ul>
       </div>
     </section>
@@ -268,11 +300,13 @@
       <p class="section-eyebrow">Results</p>
       <h2 class="section-title">Measurable outcomes</h2>
       <div class="impact-grid">
-        <div class="impact-cell">
-          <div class="impact-client">Airtel</div>
-          <div class="impact-num">46.3%</div>
-          <div class="impact-desc">Push conversion uplift via segmentation redesign and journey optimisation</div>
-        </div>
+        <a href="/case-study.html" style="text-decoration:none; display:contents;">
+          <div class="impact-cell" style="cursor:pointer;">
+            <div class="impact-client">Airtel ↗</div>
+            <div class="impact-num">46.3%</div>
+            <div class="impact-desc">Push conversion uplift via segmentation redesign and journey optimisation</div>
+          </div>
+        </a>
         <div class="impact-cell">
           <div class="impact-client">OYO Hotels</div>
           <div class="impact-num">8×</div>
@@ -300,14 +334,14 @@
         <div>
           <div class="skill-group-title">Technical</div>
           <div class="pill-group">
-            <span class="pill">REST APIs</span>
+            <span class="pill-highlight">REST APIs</span>
             <span class="pill">SDKs</span>
             <span class="pill">OAuth 2.0</span>
-            <span class="pill">AWS S3</span>
+            <span class="pill-highlight">AWS S3</span>
             <span class="pill">AWS Athena</span>
-            <span class="pill">Snowflake</span>
-            <span class="pill">SQL</span>
-            <span class="pill">Postman</span>
+            <span class="pill-highlight">Snowflake</span>
+            <span class="pill-highlight">SQL</span>
+            <span class="pill-highlight">Postman</span>
             <span class="pill">Mobile Attribution</span>
             <span class="pill">Event-driven Architecture</span>
           </div>
@@ -319,21 +353,19 @@
             <span class="pill">MoEngage</span>
             <span class="pill">AppsFlyer</span>
             <span class="pill">Amplitude</span>
-            <span class="pill">Braze</span>
-            <span class="pill">CleverTap</span>
             <span class="pill">Salesforce</span>
           </div>
         </div>
         <div>
           <div class="skill-group-title">Product & Process</div>
           <div class="pill-group">
-            <span class="pill">CSPO Certified</span>
-            <span class="pill">BRD / FRD</span>
+            <a href="https://drive.google.com/file/d/1By4mYOneN__qbphGkPkLmIziziTNsSAY/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none;"><span class="pill-highlight">CSPO Certified ↗</span></a>
+            <span class="pill-highlight">BRD / FRD</span>
             <span class="pill">UAT</span>
-            <span class="pill">Agile / Scrum</span>
+            <span class="pill-highlight">Agile / Scrum</span>
             <span class="pill">JIRA</span>
             <span class="pill">Confluence</span>
-            <span class="pill">Stakeholder Management</span>
+            <span class="pill-highlight">Stakeholder Management</span>
           </div>
         </div>
         <div>
@@ -341,7 +373,7 @@
           <div class="pill-group">
             <span class="pill">AdTech / MarTech</span>
             <span class="pill">Mobile Attribution</span>
-            <span class="pill">Customer Engagement</span>
+            <span class="pill-highlight">Customer Engagement</span>
             <span class="pill">CDPs</span>
             <span class="pill">B2B SaaS</span>
             <span class="pill">Pre-sales</span>
@@ -360,6 +392,34 @@
       </div>
     </section>
 
+    <!-- Projects -->
+    <section id="projects">
+      <p class="section-eyebrow">Projects</p>
+      <h2 class="section-title">Things I've built</h2>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-title">MMP Onboarding Assistant</div>
+          </div>
+          <span class="project-status">Prototype</span>
+        </div>
+        <p class="project-desc">
+          An AI-powered onboarding agent for Mobile Measurement Platforms (MMPs). Select the MMP you're onboarding into and specify the types and methods of data you need — the assistant generates a tailored integration checklist on the fly. Fully platform-agnostic, designed to work across Singular, AppsFlyer, Adjust, and other MMPs. Checklists can be exported in <strong>.md</strong>, <strong>.pdf</strong>, or <strong>.docx</strong> format, making it easy to share with engineering and marketing teams during onboarding.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">AI Agent</span>
+          <span class="project-tag">Mobile Attribution</span>
+          <span class="project-tag">Platform Agnostic</span>
+          <span class="project-tag">Cursor</span>
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">Checklist Generator</span>
+          <span class="project-tag">.md / .pdf / .docx export</span>
+        </div>
+        <a href="https://singular-onboarding-assistant.vercel.app/" target="_blank" rel="noopener" class="project-link">View live project ↗</a>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact">
       <p class="section-eyebrow">Get in touch</p>
@@ -369,9 +429,9 @@
           I'm actively looking for roles in Product Management, Solutions Engineering, Technical Account Management, and Partner Engineering. I'm based in Bengaluru and open to relocation.
         </p>
         <div class="contact-links">
-          <a href="mailto:subramanyamc09@email.com" class="btn btn-primary">Email me</a>
-          <a href="https://www.linkedin.com/in/cvss-subramanyam-8471a9114/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
-          <a href="#" class="btn btn-secondary">Download resume</a>
+          <a href="mailto:your@email.com" class="btn btn-primary">Email me</a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <a href="/Subramanyam_PM_Resume.pdf" class="btn btn-secondary">Download resume</a>
         </div>
         <div class="locations">
           <span class="location-tag">📍 Bengaluru, India</span>
